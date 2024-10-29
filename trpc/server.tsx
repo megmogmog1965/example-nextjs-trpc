@@ -6,11 +6,12 @@ import { createCallerFactory, createTRPCContext } from '@/trpc/init'
 import { makeQueryClient } from './query-client'
 import { appRouter } from '@/trpc/router'
 
-// IMPORTANT: Create a stable getter for the query client that
-//            will return the same client during the same request.
 export const getQueryClient = cache(makeQueryClient)
 const caller = createCallerFactory(appRouter)(createTRPCContext)
 
+/**
+ * Server-Side 向けの tRPC client.
+ */
 export const { trpc, HydrateClient } = createHydrationHelpers<typeof appRouter>(
   caller,
   getQueryClient,

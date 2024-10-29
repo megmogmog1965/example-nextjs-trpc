@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* wrap root layout with TRPCProvider. */}
         <TRPCProvider>{children}</TRPCProvider>
       </body>
     </html>

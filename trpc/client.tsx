@@ -7,8 +7,12 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { type AppRouter } from '@/trpc/router'
 import { makeQueryClient } from '@/trpc/query-client'
 
+/**
+ * Client-Side (SPA) 向けの tRPC client.
+ */
 export const trpc = createTRPCReact<AppRouter>({})
 
+// tRPC client のシングルトン共有.
 let clientQueryClientSingleton: QueryClient | undefined = undefined
 function getQueryClient() {
   if (typeof window === 'undefined') {  // (2024/10/28 川津) 'use client' なので、このコードいらなくない？
@@ -19,6 +23,9 @@ function getQueryClient() {
   return (clientQueryClientSingleton ??= makeQueryClient())
 }
 
+/**
+ * TRPC Provider (wrapper component) for layout.tsx.
+ */
 export function TRPCProvider({ children }: { children: React.ReactNode }) {
   const queryClient = getQueryClient()
 
