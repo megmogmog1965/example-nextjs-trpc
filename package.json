@@ -14,7 +14,7 @@
     "@trpc/react-query": "^11.0.0-rc.648",
     "@trpc/server": "^11.0.0-rc.648",
     "client-only": "^0.0.1",
-    "next": "^14.2.0",
+    "next": "^15.0.0",
     "react": "^18",
     "react-dom": "^18",
     "server-only": "^0.0.1",
