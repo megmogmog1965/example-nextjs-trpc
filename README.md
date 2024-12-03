@@ -5,7 +5,7 @@
 
 # example-next-trpc
 
-本リポジトリは Next.js 14.1 プロジェクトに [tRPC] を導入するコード例です。
+本リポジトリは Next.js 15 プロジェクトに [tRPC] を導入するコード例です。
 
 
 # 説明
@@ -13,7 +13,7 @@
 はじめに、以下の Next.js チュートリアルコマンドで初期プロジェクトを生成しています。
 
 ```bash
-npx create-next-app@next-14-1
+npx create-next-app@latest
 ```
 
 次に [Set up with React Server Components - tRPC公式] の指示に従い、関連 NPM Modules を導入します。
